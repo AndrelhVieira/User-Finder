@@ -1,7 +1,8 @@
 import { HomePageContainer, HomePageCover } from "./styles";
 import Button from "components/Button";
 
-import Logo from "assets/cover.svg";
+import Cover from "assets/cover.svg";
+import Logo from "assets/CompleteLogoUserFinder.svg";
 
 import { useHistory } from "react-router";
 
@@ -16,13 +17,16 @@ const HomePage = () => {
     <>
       <HomePageContainer>
         <HomePageCover>
-          <img src={Logo} alt="Logo do User Finder" />
+          <img src={Cover} alt="User Finder Cover" />
           <div>
+            <img src={Logo} />
             <h1>Welcome to User Finder</h1>
             <p>
               Here you will find the main information about any github account
             </p>
-            <Button action={goToSearch}>Search an account</Button>
+            <Button action={goToSearch} isDark={false}>
+              Search an account
+            </Button>
           </div>
         </HomePageCover>
       </HomePageContainer>

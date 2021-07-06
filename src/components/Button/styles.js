@@ -11,6 +11,7 @@ export const ButtonStyled = styled.button`
   border: none;
   outline: none;
   cursor: pointer;
-  background-color: ${COLORS.middleBlue};
+  background-color: ${({ isDark }) =>
+    isDark ? COLORS.darkBlue : COLORS.middleBlue};
   color: ${COLORS.white};
 `;
