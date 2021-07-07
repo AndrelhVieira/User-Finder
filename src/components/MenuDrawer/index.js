@@ -3,13 +3,12 @@ import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import Button from "@material-ui/core/Button";
-import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 
 import { menuItems } from "services/menuItems";
-import { DivDrawerStyled } from "./styles";
+import { DivDrawerStyled, ListStyled } from "./styles";
 
 import { useHistory } from "react-router-dom";
 import { goToSomewhere } from "services/functionalities";
@@ -54,7 +53,7 @@ const MenuDrawer = () => {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List>
+      <ListStyled>
         {menuItems.map((item, index) => (
           <ListItem
             button
@@ -66,7 +65,7 @@ const MenuDrawer = () => {
             <ListItemText />
           </ListItem>
         ))}
-      </List>
+      </ListStyled>
     </div>
   );
 

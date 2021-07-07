@@ -16,12 +16,16 @@ export const EmptyHistoryDiv = styled.div`
 export const HistoryCard = styled.div`
   background-color: ${COLORS.darkBlue};
   max-width: 396px;
-  margin: 10px auto;
+  margin: 20px 5px;
   padding: 10px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   box-shadow: 1px 1px 10px black;
+
+  @media screen and (min-width: 396px) {
+    margin: 20px auto;
+  }
 
   & img {
     width: 30%;

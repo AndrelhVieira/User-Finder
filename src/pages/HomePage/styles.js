@@ -21,7 +21,7 @@ export const HomePageCover = styled.section`
   & img {
     display: block;
     margin: 10px auto;
-    width: 75%;
+    width: 70%;
     max-width: 296px;
   }
 
@@ -29,6 +29,14 @@ export const HomePageCover = styled.section`
     text-align: center;
     font-size: 1rem;
     margin: auto;
+
+    & img {
+      display: none;
+
+      @media screen and (min-width: 696px) {
+        display: block;
+      }
+    }
   }
 
   @media screen and (min-width: 696px) {
