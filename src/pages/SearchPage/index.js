@@ -9,9 +9,11 @@ import { SearchPageContainer, FormContainer } from "./styles";
 import Menu from "components/Menu";
 import Button from "components/Button";
 import UserCard from "components/UserCard";
+import Loading from "components/Loading";
 
 const SearchPage = () => {
   const [user, setUser] = useState("");
+  const [loading, setLoading] = useState(false);
   const { currentUser, setCurrentUser } = useContext(CurrentUserInfosContext);
   const { addUserSearch } = useContext(UsersHistoryInfosContext);
 
@@ -26,6 +28,8 @@ const SearchPage = () => {
   };
 
   const retrieveUser = async () => {
+    setLoading(true);
+
     const { exactMoment, momentsAgo } = getMoment();
 
     await api
@@ -42,6 +46,8 @@ const SearchPage = () => {
       .catch((erro) => {
         notify.show("User not Found!", "error", 2500);
       });
+
+    setLoading(false);
   };
 
   const handleChange = (event) => {
@@ -67,6 +73,7 @@ const SearchPage = () => {
             retrieve username
           </Button>
         </FormContainer>
+        {loading && <Loading loading={loading} />}
         {JSON.stringify(currentUser) !== JSON.stringify({}) && (
           <UserCard user={currentUser} />
         )}
