@@ -14,4 +14,13 @@ export const ButtonStyled = styled.button`
   background-color: ${({ isDark }) =>
     isDark ? COLORS.darkBlue : COLORS.middleBlue};
   color: ${COLORS.white};
+
+  & a {
+    text-decoration: none;
+    color: ${COLORS.white};
+  }
+
+  & i {
+    margin-right: 5px;
+  }
 `;
