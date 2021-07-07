@@ -19,7 +19,7 @@ const SearchPage = () => {
   const { addUserSearch } = useContext(UsersHistoryInfosContext);
 
   const getMoment = () => {
-    const exactMoment = moment().format("MMMM Do YYYY, h:mm a");
+    const exactMoment = moment().format("MMMM Do YYYY, h:mm:ss a");
     const momentsAgo = moment().startOf(exactMoment).fromNow();
 
     return {
@@ -64,7 +64,9 @@ const SearchPage = () => {
             retrieve username
           </Button>
         </FormContainer>
-        {showCard && <UserCard user={currentUser} />}
+        {JSON.stringify(currentUser) !== JSON.stringify({}) && (
+          <UserCard user={currentUser} />
+        )}
       </SearchPageContainer>
     </>
   );

@@ -38,8 +38,10 @@ const UserCard = ({ user }) => {
           {repositories.map((repo, index) => (
             <ReposCards key={index}>
               <h3>{repo.name}</h3>
-              <p>{repo.language}</p>
-              <button>Link to Repository</button>
+              {repo.language ? <p>{repo.language}</p> : <p>Not Informated</p>}
+              <a href={repo.html_url} target="_blank" rel="noreferrer">
+                <Button>Link to Repository</Button>
+              </a>
             </ReposCards>
           ))}
         </ReposDiv>

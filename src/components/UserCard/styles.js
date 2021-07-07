@@ -45,7 +45,12 @@ export const ReposCards = styled.div`
   border: 3px solid ${COLORS.darkBlue};
   background-color: ${COLORS.darkBlue};
 
+  & a {
+    margin: 10px auto;
+  }
+
   & button {
+    width: 100%;
     font-family: "DM Sans", sans-serif;
     font-weight: bold;
     text-transform: uppercase;
