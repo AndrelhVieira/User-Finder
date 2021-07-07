@@ -4,10 +4,13 @@ import { COLORS } from "styles/colors";
 export const MenuStyled = styled.section`
   background-color: ${COLORS.darkBlue};
   display: flex;
-  /* width: 100vw; */
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
 
   & img {
     width: 50%;

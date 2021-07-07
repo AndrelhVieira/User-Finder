@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { notify } from "react-notify-toast";
 
 import { SearchPageContainer, FormContainer } from "./styles";
 import Menu from "components/Menu";
@@ -14,7 +15,6 @@ import { UsersHistoryInfosContext } from "providers/UsersHistoryInfos";
 
 const SearchPage = () => {
   const [user, setUser] = useState("");
-  const [showCard, setShowCard] = useState(false);
   const { currentUser, setCurrentUser } = useContext(CurrentUserInfosContext);
   const { addUserSearch } = useContext(UsersHistoryInfosContext);
 
@@ -31,14 +31,19 @@ const SearchPage = () => {
   const retrieveUser = async () => {
     const { exactMoment, momentsAgo } = getMoment();
 
-    await api.get(`/users/${user}`).then((response) => {
-      response.data.exactMoment = exactMoment;
-      response.data.momentsAgo = momentsAgo;
+    await api
+      .get(`/users/${user}`)
+      .then((response) => {
+        response.data.exactMoment = exactMoment;
+        response.data.momentsAgo = momentsAgo;
 
-      setCurrentUser(response.data);
-      addUserSearch(response.data);
-    });
-    setShowCard(true);
+        setCurrentUser(response.data);
+        addUserSearch(response.data);
+        notify.show("User Found", "success", 2500);
+      })
+      .catch((erro) => {
+        notify.show("User not Found!", "error", 2500);
+      });
   };
 
   const handleChange = (event) => {

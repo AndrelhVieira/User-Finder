@@ -26,6 +26,7 @@ export const CardDiv = styled.div`
 
   & a {
     margin: 10px;
+    text-decoration: none;
   }
 
   & button {
@@ -47,6 +48,7 @@ export const ReposCards = styled.div`
 
   & a {
     margin: 10px auto;
+    text-decoration: none;
   }
 
   & button {
@@ -57,7 +59,6 @@ export const ReposCards = styled.div`
     padding: 15px;
     font-size: 1rem;
     letter-spacing: 1px;
-    border: 3px solid ${COLORS.darkBlue};
     outline: none;
     cursor: pointer;
     background-color: ${({ isDark }) =>

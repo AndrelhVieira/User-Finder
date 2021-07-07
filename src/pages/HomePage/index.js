@@ -19,7 +19,7 @@ const HomePage = () => {
         <HomePageCover>
           <img src={Cover} alt="User Finder Cover" />
           <div>
-            <img src={Logo} />
+            <img src={Logo} alt="User Finder Logo" />
             <h1>Welcome to User Finder</h1>
             <p>
               Here you will find the main information about any github account
