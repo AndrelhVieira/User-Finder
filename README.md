@@ -1,10 +1,11 @@
 <div align="center"><img src="src/assets/CompleteLogoUserFinder.svg" width="300"></div>
 
+# About
 <p align="justify">
 The main purpose of this application is to streamline access to the account of friends, employees or even yours, easily providing the path to the main Github projects for that user. You can also see what your latest searches were through your search history.
 </p>
 
-## How it works
+# How it works
 <p>
 1. On the search page you will find a field to enter the username
 (Attention: only the username) and a button to do the search.
@@ -30,3 +31,27 @@ that account.
 src="src/assets/printSearchPageResult.png"
 alt="Search page results print for demonstration"
 />
+
+
+# Tecnologies
+These were the main technologies, frameworks and libraries used in the development of this project:
+
+### Tecnologies / Frameworks
+- HTML
+- CSS
+- Javascript
+- ReactJS
+
+### Libraries
+- Material UI
+- Styled Components 
+- Moment JS
+- React Notify Toast
+- React Router DOM
+- React Spinners
+
+### Others
+- GIT
+- Conventional Commits
+
+# Acess the Application 
