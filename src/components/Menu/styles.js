@@ -16,6 +16,7 @@ export const MenuStyled = styled.section`
     width: 50%;
     margin: 10px;
     max-width: 296px;
+    cursor: pointer;
   }
 `;
 

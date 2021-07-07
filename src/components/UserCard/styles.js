@@ -45,6 +45,7 @@ export const ReposCards = styled.div`
   max-width: 296px;
   border: 3px solid ${COLORS.darkBlue};
   background-color: ${COLORS.darkBlue};
+  box-shadow: 1px 1px 10px black;
 
   & a {
     margin: 10px auto;

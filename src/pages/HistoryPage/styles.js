@@ -21,6 +21,7 @@ export const HistoryCard = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  box-shadow: 1px 1px 10px black;
 
   & img {
     width: 30%;

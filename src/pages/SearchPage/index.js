@@ -1,17 +1,14 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CurrentUserInfosContext } from "providers/CurrentUserInfos";
+import { UsersHistoryInfosContext } from "providers/UsersHistoryInfos";
 import { notify } from "react-notify-toast";
+import api from "services/api";
+import moment from "moment";
 
 import { SearchPageContainer, FormContainer } from "./styles";
 import Menu from "components/Menu";
 import Button from "components/Button";
 import UserCard from "components/UserCard";
-
-import api from "services/api";
-import moment from "moment";
-
-import { useContext } from "react";
-import { CurrentUserInfosContext } from "providers/CurrentUserInfos";
-import { UsersHistoryInfosContext } from "providers/UsersHistoryInfos";
 
 const SearchPage = () => {
   const [user, setUser] = useState("");
@@ -39,6 +36,7 @@ const SearchPage = () => {
 
         setCurrentUser(response.data);
         addUserSearch(response.data);
+
         notify.show("User Found", "success", 2500);
       })
       .catch((erro) => {

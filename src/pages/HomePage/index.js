@@ -1,10 +1,10 @@
+import { useHistory } from "react-router";
+
 import { HomePageContainer, HomePageCover } from "./styles";
 import Button from "components/Button";
 
 import Cover from "assets/cover.svg";
 import Logo from "assets/CompleteLogoUserFinder.svg";
-
-import { useHistory } from "react-router";
 
 const HomePage = () => {
   const history = useHistory();

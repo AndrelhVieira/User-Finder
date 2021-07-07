@@ -1,14 +1,14 @@
+import { useContext } from "react";
+import { UsersHistoryInfosContext } from "providers/UsersHistoryInfos";
+import { CurrentUserInfosContext } from "providers/CurrentUserInfos";
+import { useHistory } from "react-router";
+import { goToSomewhere } from "services/functionalities";
+
 import { HistoryPageContainer, EmptyHistoryDiv, HistoryCard } from "./styles";
 import Menu from "components/Menu";
 import Button from "components/Button";
 
 import emptyImage from "assets/emptyImage.svg";
-
-import { useContext } from "react";
-import { UsersHistoryInfosContext } from "providers/UsersHistoryInfos";
-import { CurrentUserInfosContext } from "providers/CurrentUserInfos";
-import { goToSomewhere } from "services/functionalities";
-import { useHistory } from "react-router";
 
 const HistoryPage = () => {
   const history = useHistory();
@@ -16,14 +16,10 @@ const HistoryPage = () => {
   const { allUsersSearched } = useContext(UsersHistoryInfosContext);
   const { setCurrentUser } = useContext(CurrentUserInfosContext);
 
-  localStorage.setItem("Searches", JSON.stringify(allUsersSearched));
-
-  const usersStorage = JSON.parse(localStorage.getItem("Searches")) || "";
-
-  usersStorage.sort(function (a, b) {
-    return a.exactMoment > b.exactMoment
+  allUsersSearched.sort(function (item, nextItem) {
+    return item.exactMoment > nextItem.exactMoment
       ? -1
-      : b.exactMoment > a.exactMoment
+      : nextItem.exactMoment > item.exactMoment
       ? 1
       : 0;
   });
@@ -39,8 +35,8 @@ const HistoryPage = () => {
       <HistoryPageContainer>
         <Menu />
         <h1>History</h1>
-        {JSON.stringify(usersStorage) !== JSON.stringify([]) ? (
-          usersStorage.map((search, index) => (
+        {JSON.stringify(allUsersSearched) !== JSON.stringify([]) ? (
+          allUsersSearched.map((search, index) => (
             <HistoryCard key={index}>
               <img src={search.avatar_url} alt="User avatar" />
               <div>
