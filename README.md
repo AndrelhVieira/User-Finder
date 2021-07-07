@@ -53,5 +53,7 @@ These were the main technologies, frameworks and libraries used in the developme
 ### Others
 - GIT
 - Conventional Commits
+- Github REST API
+- This project is Mobile First
 
 # Acess the Application 
