@@ -74,7 +74,7 @@ const MenuDrawer = () => {
       {["bottom"].map((anchor) => (
         <React.Fragment key={anchor}>
           <Button onClick={toggleDrawer(anchor, true)}>
-            <i class="fas fa-bars"></i>
+            <i className="fas fa-bars"></i>
           </Button>
           <Drawer
             anchor={anchor}

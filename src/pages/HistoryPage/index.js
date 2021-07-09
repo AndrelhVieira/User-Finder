@@ -49,7 +49,7 @@ const HistoryPage = () => {
                   <em>{search.momentsAgo}</em>
                 </p>
                 <Button action={() => backToSearch(search)}>
-                  <i class="fas fa-search"></i>
+                  <i className="fas fa-search"></i>
                   Search again
                 </Button>
               </div>

@@ -62,7 +62,7 @@ const SearchPage = () => {
         <FormContainer>
           <input
             name="username"
-            for="username"
+            htmlFor="username"
             id="username"
             placeholder="Github Username"
             autoComplete="off"

@@ -1,17 +1,17 @@
 export const menuItems = [
   {
     itemName: "Search",
-    itemIcon: <i class="fas fa-search"></i>,
+    itemIcon: <i className="fas fa-search"></i>,
     linkTo: "/search",
   },
   {
     itemName: "History",
-    itemIcon: <i class="fas fa-history"></i>,
+    itemIcon: <i className="fas fa-history"></i>,
     linkTo: "/history",
   },
   {
     itemName: "About",
-    itemIcon: <i class="far fa-question-circle"></i>,
+    itemIcon: <i className="far fa-question-circle"></i>,
     linkTo: "/about",
   },
 ];
