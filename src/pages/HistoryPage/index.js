@@ -4,7 +4,13 @@ import { CurrentUserInfosContext } from "providers/CurrentUserInfos";
 import { useHistory } from "react-router";
 import { goToSomewhere } from "services/functionalities";
 
-import { HistoryPageContainer, EmptyHistoryDiv, HistoryCard } from "./styles";
+import {
+  HistoryPageContainer,
+  EmptyHistoryDiv,
+  HistoryCard,
+  ButtonDiv,
+  UserInfosDiv,
+} from "./styles";
 import Menu from "components/Menu";
 import Button from "components/Button";
 
@@ -26,7 +32,6 @@ const HistoryPage = () => {
 
   const backToSearch = (search) => {
     setCurrentUser(search);
-
     goToSomewhere(history, "/search");
   };
 
@@ -38,21 +43,29 @@ const HistoryPage = () => {
         {JSON.stringify(allUsersSearched) !== JSON.stringify([]) ? (
           allUsersSearched.map((search, index) => (
             <HistoryCard key={index}>
-              <img src={search.avatar_url} alt="User avatar" />
-              <div>
-                <h3>{search.name}</h3>
-                <p>
-                  Searched in <br />
-                  <strong>{search.exactMoment}</strong>
-                </p>
-                <p>
-                  <em>{search.momentsAgo}</em>
-                </p>
+              <UserInfosDiv>
+                <img src={search.avatar_url} alt="User avatar" />
+                <div>
+                  <h3>{search.name}</h3>
+                  <p>
+                    Searched in <br />
+                    <strong>{search.exactMoment}</strong>
+                  </p>
+                  <p>
+                    <em>{search.momentsAgo}</em>
+                  </p>
+                </div>
+              </UserInfosDiv>
+              <ButtonDiv>
                 <Button action={() => backToSearch(search)}>
                   <i className="fas fa-search"></i>
                   Search again
                 </Button>
-              </div>
+                <Button>
+                  <i className="far fa-trash-alt"></i>
+                  Remove item
+                </Button>
+              </ButtonDiv>
             </HistoryCard>
           ))
         ) : (
