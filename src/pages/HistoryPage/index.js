@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { UsersHistoryInfosContext } from "providers/UsersHistoryInfos";
 import { CurrentUserInfosContext } from "providers/CurrentUserInfos";
 import { useHistory } from "react-router";
@@ -15,12 +15,18 @@ import Menu from "components/Menu";
 import Button from "components/Button";
 
 import emptyImage from "assets/emptyImage.svg";
+import { notify } from "react-notify-toast";
+import Footer from "components/Footer";
 
 const HistoryPage = () => {
   const history = useHistory();
 
-  const { allUsersSearched } = useContext(UsersHistoryInfosContext);
+  const { allUsersSearched, removeUserSearch } = useContext(
+    UsersHistoryInfosContext
+  );
   const { setCurrentUser } = useContext(CurrentUserInfosContext);
+
+  const [usersList, setUsersList] = useState(allUsersSearched);
 
   allUsersSearched.sort(function (item, nextItem) {
     return item.exactMoment > nextItem.exactMoment
@@ -35,13 +41,36 @@ const HistoryPage = () => {
     goToSomewhere(history, "/search");
   };
 
+  const removeSearch = (search) => {
+    const searchToDelete = usersList.find(
+      (item) => item.exactMoment === search.exactMoment
+    );
+    const allUsersUpdated = usersList.filter((item) => item !== searchToDelete);
+
+    setUsersList(allUsersUpdated);
+    removeUserSearch(allUsersUpdated);
+    notify.show("Search Deleted", "success", 2500);
+  };
+
+  const removeAllSearches = () => {
+    setUsersList([]);
+    removeUserSearch([]);
+    notify.show("Clean History", "success", 2500);
+  };
+
   return (
     <>
       <HistoryPageContainer>
         <Menu />
         <h1>History</h1>
-        {JSON.stringify(allUsersSearched) !== JSON.stringify([]) ? (
-          allUsersSearched.map((search, index) => (
+        {JSON.stringify(usersList) !== JSON.stringify([]) && (
+          <Button isDark action={removeAllSearches}>
+            <i className="far fa-trash-alt"></i>
+            Clear History
+          </Button>
+        )}
+        {JSON.stringify(usersList) !== JSON.stringify([]) ? (
+          usersList.map((search, index) => (
             <HistoryCard key={index}>
               <UserInfosDiv>
                 <img src={search.avatar_url} alt="User avatar" />
@@ -61,9 +90,9 @@ const HistoryPage = () => {
                   <i className="fas fa-search"></i>
                   Search again
                 </Button>
-                <Button>
+                <Button action={() => removeSearch(search)}>
                   <i className="far fa-trash-alt"></i>
-                  Remove item
+                  Remove Search
                 </Button>
               </ButtonDiv>
             </HistoryCard>
@@ -76,6 +105,7 @@ const HistoryPage = () => {
             </p>
           </EmptyHistoryDiv>
         )}
+        <Footer />
       </HistoryPageContainer>
     </>
   );

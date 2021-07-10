@@ -4,6 +4,7 @@ import Menu from "components/Menu";
 import printSearchPage from "assets/printSearchPage.png";
 import printHistoryPage from "assets/printHistoryPage.png";
 import printSearchPageResult from "assets/printSearchPageResult.png";
+import Footer from "components/Footer";
 
 const AboutPage = () => {
   return (
@@ -47,6 +48,7 @@ const AboutPage = () => {
             alt="Search page results print for demonstration"
           />
         </HowItWorksDiv>
+        <Footer />
       </AboutPageContainer>
     </>
   );

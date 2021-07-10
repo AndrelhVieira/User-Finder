@@ -9,9 +9,13 @@ export const UsersHistoryInfosProvider = ({ children }) => {
     setAllUsersSearched([...allUsersSearched, currentUser]);
   };
 
+  const removeUserSearch = (allUsersUpdated) => {
+    setAllUsersSearched(allUsersUpdated);
+  };
+
   return (
     <UsersHistoryInfosContext.Provider
-      value={{ allUsersSearched, addUserSearch }}
+      value={{ allUsersSearched, addUserSearch, removeUserSearch }}
     >
       {children}
     </UsersHistoryInfosContext.Provider>

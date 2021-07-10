@@ -6,6 +6,9 @@ export const SearchPageContainer = styled.section`
   background-color: ${COLORS.middleBlue};
   color: ${COLORS.white};
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 export const FormContainer = styled.div`

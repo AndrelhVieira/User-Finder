@@ -10,6 +10,7 @@ import Menu from "components/Menu";
 import Button from "components/Button";
 import UserCard from "components/UserCard";
 import Loading from "components/Loading";
+import Footer from "components/Footer";
 
 const SearchPage = () => {
   const [user, setUser] = useState("");
@@ -58,8 +59,8 @@ const SearchPage = () => {
     <>
       <SearchPageContainer>
         <Menu />
-        <h1>Search</h1>
         <FormContainer>
+          <h1>Search</h1>
           <input
             name="username"
             htmlFor="username"
@@ -77,6 +78,7 @@ const SearchPage = () => {
         {JSON.stringify(currentUser) !== JSON.stringify({}) && (
           <UserCard user={currentUser} />
         )}
+        <Footer />
       </SearchPageContainer>
     </>
   );
