@@ -6,7 +6,12 @@ const Footer = () => {
   return (
     <FooterContainer>
       <img src={Logo} alt="User Finder Logo" />
-      <h4>Developed by André Luiz Vieira</h4>
+      <h4>
+        Developed by{" "}
+        <a href="https://andreluizv.dev.br" target="_blank" rel="noreferrer">
+          André Luiz Vieira
+        </a>
+      </h4>
     </FooterContainer>
   );
 };

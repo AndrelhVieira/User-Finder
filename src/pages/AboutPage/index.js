@@ -1,12 +1,16 @@
 import { AboutPageContainer, HowItWorksDiv } from "./styles";
 import Menu from "components/Menu";
+import { useHistory } from "react-router";
 
 import printSearchPage from "assets/printSearchPage.png";
 import printHistoryPage from "assets/printHistoryPage.png";
 import printSearchPageResult from "assets/printSearchPageResult.png";
 import Footer from "components/Footer";
+import { goToSomewhere } from "services/functionalities";
 
 const AboutPage = () => {
+  const history = useHistory();
+
   return (
     <>
       <AboutPageContainer>
@@ -23,8 +27,12 @@ const AboutPage = () => {
         <HowItWorksDiv>
           <h3>How it works</h3>
           <p>
-            1. On the search page you will find a field to enter the username
-            (Attention: only the username) and a button to do the search.
+            1. On the{" "}
+            <strong onClick={() => goToSomewhere(history, "/search")}>
+              search page
+            </strong>{" "}
+            you will find a field to enter the <em>username</em> (Attention:
+            only the username) and a button to do the search.
           </p>
           <img
             src={printSearchPage}
@@ -32,7 +40,11 @@ const AboutPage = () => {
           />
           <p>
             2. As soon as you click the button, a record of your search is
-            visible in your search history and you can repeat it.
+            visible in your{" "}
+            <strong onClick={() => goToSomewhere(history, "/history")}>
+              search history
+            </strong>{" "}
+            and you can repeat it.
           </p>
           <img
             src={printHistoryPage}

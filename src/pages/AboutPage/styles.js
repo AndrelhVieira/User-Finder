@@ -30,6 +30,10 @@ export const HowItWorksDiv = styled.div`
     display: none;
   }
 
+  & strong {
+    cursor: pointer;
+  }
+
   @media screen and (min-width: 725px) {
     & img {
       display: block;
