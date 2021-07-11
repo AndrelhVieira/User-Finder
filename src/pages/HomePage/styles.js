@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { COLORS } from "styles/colors";
+import { COLORS } from "styles/globalStyle";
 
 export const HomePageContainer = styled.section`
   display: flex;
   justify-content: center;
   height: 100vh;
-  background-color: ${COLORS.darkBlue};
-  color: ${COLORS.white};
+  background-color: ${COLORS.primaryColor};
+  color: ${COLORS.light};
   @media screen and (min-width: 696px) {
     flex-direction: row;
   }

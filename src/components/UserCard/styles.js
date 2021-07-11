@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { COLORS } from "styles/colors";
+import { COLORS } from "styles/globalStyle";
 
 export const CardDiv = styled.div`
-  border: 3px solid ${COLORS.darkBlue};
+  border: 3px solid ${COLORS.primaryColor};
   margin: 15px;
   max-width: 696px;
   display: flex;
@@ -13,7 +13,7 @@ export const CardDiv = styled.div`
     width: 90%;
     margin: auto;
     border-radius: 50%;
-    border: 5px solid ${COLORS.darkBlue};
+    border: 5px solid ${COLORS.primaryColor};
   }
 
   & section {
@@ -43,8 +43,8 @@ export const ReposCards = styled.div`
   padding: 10px;
   width: 100%;
   max-width: 296px;
-  border: 3px solid ${COLORS.darkBlue};
-  background-color: ${COLORS.darkBlue};
+  border: 3px solid ${COLORS.primaryColor};
+  background-color: ${COLORS.primaryColor};
   box-shadow: 1px 1px 10px black;
 
   & a {
@@ -63,8 +63,8 @@ export const ReposCards = styled.div`
     outline: none;
     cursor: pointer;
     background-color: ${({ isDark }) =>
-      isDark ? COLORS.darkBlue : COLORS.middleBlue};
-    color: ${COLORS.white};
+      isDark ? COLORS.primaryColor : COLORS.secondaryColor};
+    color: ${COLORS.light};
   }
 
   & h3,

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { COLORS } from "styles/colors";
+import { COLORS } from "styles/globalStyle";
 
 export const ButtonStyled = styled.button`
   font-family: "DM Sans", sans-serif;
@@ -12,8 +12,8 @@ export const ButtonStyled = styled.button`
   outline: none;
   cursor: pointer;
   background-color: ${({ isDark }) =>
-    isDark ? COLORS.darkBlue : COLORS.middleBlue};
-  color: ${COLORS.white};
+    isDark ? COLORS.primaryColor : COLORS.secondaryColor};
+  color: ${COLORS.light};
   transition: 0.25s;
   position: relative;
   z-index: 1;
@@ -26,7 +26,7 @@ export const ButtonStyled = styled.button`
     top: 0;
     left: 0;
     z-index: -1;
-    background-color: ${COLORS.white};
+    background-color: ${COLORS.light};
     width: 0;
     transition: 0.3s;
     height: 100%;
@@ -38,14 +38,14 @@ export const ButtonStyled = styled.button`
 
   &:hover {
     box-shadow: 2px 2px 50px 5px
-      ${({ isDark }) => (isDark ? COLORS.darkBlue : COLORS.middleBlue)};
-    color: ${COLORS.white};
-    color: ${COLORS.darkBlue};
+      ${({ isDark }) => (isDark ? COLORS.primaryColor : COLORS.secondaryColor)};
+    color: ${COLORS.light};
+    color: ${COLORS.primaryColor};
   }
 
   & a:link {
     text-decoration: none;
-    color: ${COLORS.white};
+    color: ${COLORS.light};
   }
 
   & i {

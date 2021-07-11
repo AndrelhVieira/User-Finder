@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { COLORS } from "styles/colors";
+import { COLORS } from "styles/globalStyle";
 
 import List from "@material-ui/core/List";
 
 export const DivDrawerStyled = styled.div`
   & button {
-    color: ${COLORS.white};
+    color: ${COLORS.light};
     font-size: 2.5rem;
   }
 
@@ -15,10 +15,10 @@ export const DivDrawerStyled = styled.div`
 `;
 
 export const ListStyled = styled(List)`
-  background-color: ${COLORS.darkBlue};
-  color: ${COLORS.white};
+  background-color: ${COLORS.primaryColor};
+  color: ${COLORS.light};
 
   & i {
-    color: ${COLORS.white};
+    color: ${COLORS.light};
   }
 `;

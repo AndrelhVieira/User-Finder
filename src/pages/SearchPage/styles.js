@@ -1,10 +1,9 @@
 import styled from "styled-components";
-import { COLORS } from "styles/colors";
+import { COLORS } from "styles/globalStyle";
 
 export const SearchPageContainer = styled.section`
   height: 100vh;
-  background-color: ${COLORS.middleBlue};
-  color: ${COLORS.white};
+  color: ${COLORS.light};
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -22,13 +21,13 @@ export const FormContainer = styled.div`
     font-size: 1.25rem;
     padding: 10px;
     margin: 10px;
-    border: 3px solid ${COLORS.darkBlue};
-    color: ${COLORS.white};
-    background-color: ${COLORS.darkBlue};
+    border: 3px solid ${COLORS.primaryColor};
+    color: ${COLORS.light};
+    background-color: ${COLORS.primaryColor};
     outline: none;
   }
 
   & ::placeholder {
-    color: ${COLORS.middleBlue};
+    color: ${COLORS.secondaryColor};
   }
 `;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { COLORS } from "styles/colors";
+import { COLORS } from "styles/globalStyle";
 
 export const FooterContainer = styled.section`
   padding: 10px;
@@ -13,6 +13,6 @@ export const FooterContainer = styled.section`
 
   & a {
     text-decoration: none;
-    color: ${COLORS.darkBlue};
+    color: ${COLORS.primaryColor};
   }
 `;

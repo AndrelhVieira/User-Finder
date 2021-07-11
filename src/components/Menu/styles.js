@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { COLORS } from "styles/colors";
+import { COLORS } from "styles/globalStyle";
 
 export const MenuStyled = styled.section`
-  background-color: ${COLORS.darkBlue};
+  background-color: ${COLORS.primaryColor};
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -28,7 +28,7 @@ export const DesktopMenuItems = styled.div`
 
   & button {
     font-family: "DM Sans", sans-serif;
-    color: ${COLORS.white};
+    color: ${COLORS.light};
     background-color: transparent;
     border: none;
     outline: none;
@@ -43,7 +43,7 @@ export const DesktopMenuItems = styled.div`
   }
 
   & :hover {
-    background-color: ${COLORS.middleBlue};
+    background-color: ${COLORS.secondaryColor};
   }
 
   @media screen and (min-width: 696px) {

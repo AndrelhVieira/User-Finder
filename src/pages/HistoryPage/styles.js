@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { COLORS } from "styles/colors";
+import { COLORS } from "styles/globalStyle";
 
 export const HistoryPageContainer = styled.section`
-  color: ${COLORS.white};
+  color: ${COLORS.light};
   text-align: center;
 `;
 
@@ -14,7 +14,7 @@ export const EmptyHistoryDiv = styled.div`
 `;
 
 export const HistoryCard = styled.div`
-  background-color: ${COLORS.darkBlue};
+  background-color: ${COLORS.primaryColor};
   max-width: 396px;
   margin: 20px 5px;
   padding: 10px;
@@ -32,7 +32,7 @@ export const HistoryCard = styled.div`
   & img {
     width: 30%;
     border-radius: 50%;
-    border: 5px solid ${COLORS.middleBlue};
+    border: 5px solid ${COLORS.secondaryColor};
     display: none;
 
     @media screen and (min-width: 396px) {

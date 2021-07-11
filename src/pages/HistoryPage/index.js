@@ -13,6 +13,7 @@ import {
 } from "./styles";
 import Menu from "components/Menu";
 import Button from "components/Button";
+import ConfirmationModal from "components/ConfirmationModal";
 
 import emptyImage from "assets/emptyImage.svg";
 import { notify } from "react-notify-toast";
@@ -64,10 +65,7 @@ const HistoryPage = () => {
         <Menu />
         <h1>History</h1>
         {JSON.stringify(usersList) !== JSON.stringify([]) && (
-          <Button isDark action={removeAllSearches}>
-            <i className="far fa-trash-alt"></i>
-            Clear History
-          </Button>
+          <ConfirmationModal deleteAll action={removeAllSearches} />
         )}
         {JSON.stringify(usersList) !== JSON.stringify([]) ? (
           usersList.map((search, index) => (
@@ -90,10 +88,7 @@ const HistoryPage = () => {
                   <i className="fas fa-search"></i>
                   Search again
                 </Button>
-                <Button action={() => removeSearch(search)}>
-                  <i className="far fa-trash-alt"></i>
-                  Remove Search
-                </Button>
+                <ConfirmationModal search={search} action={removeSearch} />
               </ButtonDiv>
             </HistoryCard>
           ))
