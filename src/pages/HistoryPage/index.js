@@ -40,6 +40,7 @@ const HistoryPage = () => {
   const backToSearch = (search) => {
     setCurrentUser(search);
     goToSomewhere(history, "/search");
+    window.scrollTo(0, 0);
   };
 
   const removeSearch = (search) => {
