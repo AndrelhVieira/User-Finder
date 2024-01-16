@@ -58,3 +58,10 @@ These were the main technologies, frameworks and libraries used in the developme
 
 # Acess the Application
 To acess [click here ](https://user-finder.vercel.app/)
+
+# Check it out
+### Android version
+To access the repo [click here](https://github.com/AndrelhVieira/User-Finder-Android)
+
+### iOS version
+To access the repo [click here](https://github.com/AndrelhVieira/User-Finder-iOS)
